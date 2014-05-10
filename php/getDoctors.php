@@ -8,7 +8,7 @@ $token=str_replace(" ","",$_REQUEST['token']);
 
 
 $doctors=R::getAll( "SELECT * FROM Doctor");
-print (json_encode($doctors));
 
+print( json_encode(array("success"=>true, "data"=>$doctors)));
 
 ?>

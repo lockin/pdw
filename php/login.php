@@ -14,9 +14,10 @@ if($pacient!=null){
 	$result = $date->format('Y-m-d H:i:s');
 	$pacient->token=md5($result);
 	R::store($pacient);
-	print($pacient->token);
+	
+	print (json_encode(array("token"=>$pacient->token, "success"=>true)));
 }else{
-	print("FALSE");
+	print( json_encode(array("success"=>false)));
 }
 
 ?>

@@ -3,8 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:id="@+id/main_list"
-    tools:context="com.pwr.pdw.app.ui.acitivites.MainActivity">
+    android:id="@+id/details_list"
+    tools:context="com.pwr.pdw.app.ui.acitivites.DetailsActivity">
+
 
 
 </ListView>

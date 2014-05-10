@@ -22,11 +22,11 @@ if($pacient!=null){
 		}
 		$visits[$i]["pacientVisitNote"]=$visitNotes;
 	}
-	
-	print (json_encode($visits));
+	print( json_encode(array("success"=>true, "data"=>$visits)));
+
 	
 }else{
-	print("FALSE");
+	print( json_encode(array("success"=>false)));
 }
 
 ?>

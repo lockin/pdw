@@ -18,9 +18,9 @@ if($pacient==null){
 	$pacient->email=$email;
 	$pacient->passwordHash=md5($password);
 	R::store($pacient);
-	print("TRUE");
+	print( json_encode(array("success"=>true)));
 }else{
-	print("FALSE");
+	print( json_encode(array("success"=>false)));
 }
 
 ?>

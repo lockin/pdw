@@ -15,13 +15,13 @@ if($pacient!=null){
 	if($doctor!=null){
 		R::getAll( "SELECT * FROM PacientVisitNote  WHERE idPacientVisit = '".$visits[$i]["id"]."'");
 	}else{
-		print("FALSE");
+		print( json_encode(array("success"=>false)));
 	}
 	$visitsNotes = R::getAll( "SELECT * FROM PacientVisitNote WHERE idDoctor = '".$doctor->id."' AND ((startDate >= '".$startDate."' AND startDate < '".$stopDate."') OR (stopDate > '".$startDate."' AND stopDate <= '".$stopDate."'))" );
 	
 	$length = count($visitsNotes);
 	if($length>0){
-		print("FALSE");
+		print( json_encode(array("success"=>false)));
 	}else{
 		$pacientVisit=R::dispense( 'PacientVisit' );
 		$pacientVisit->createDate=date_create()->format('Y-m-d H:i:s');
@@ -34,10 +34,10 @@ if($pacient!=null){
 		$pacientVisitNote->startDate=$startDate;
 		$pacientVisitNote->stopDate=$stopDate;
 		R::store($pacientVisitNote);
-		print("TRUE");
+		print( json_encode(array("success"=>true)));
 	}	
 }else{
-	print("FALSE");
+	print( json_encode(array("success"=>false)));
 }
 
 ?>
